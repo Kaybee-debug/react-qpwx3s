@@ -8,6 +8,15 @@ import ToDoList from './Pages/ToDoList';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import Search from "@material-ui/icons/Search";
+import WbSunny from "@material-ui/icons/WbSunny";
+import Star from "@material-ui/icons/Star";
+import CalendarToday from "@material-ui/icons/CalendarToday";
+import Person from "@material-ui/icons/Person";
+import Add from "@material-ui/icons/Add";
+import AddAlert from "@material-ui/icons/AddAlert";
+import EventAvailable from "@material-ui/icons/EventAvailable";
+
 //components
 //import {Nav} from 'components';
 import {
@@ -145,24 +154,15 @@ export default function App() {
     <Router>
       <div>
         <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
+          
+          
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/todolist">
+            <ToDoList />
           </Route>
           <Route path="/users">
             <Users />
@@ -177,49 +177,126 @@ export default function App() {
 }
 
 function Home() {
+  const classes = useStyles();
   return <div> 
-  <h2>Welcome Home</h2>
+  
 
-<button onClick={()=>{  firebase.auth().createUserWithEmailAndPassword("kamo@gmail.com", "123456")
-  .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-    console.log(user)
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(error.message)
-    // ..
-  });}}>New User</button>
+  <div style={{ backgroundColor: 'turquoise' }}>
+      
+      <Grid container spacing={0}>
+        <Grid item xs={1} />
+        <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
+          <img
+            src="https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/107070798_899383087210144_631496564149069433_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=PXulVd66UsgAX-kOTkv&_nc_ht=scontent.fjnb11-1.fna&oh=d7052661a5449b44b6f11f7ae604d90b&oe=60FA6FDB"
+            width="100%"
+          />
+        </Grid>
+        <Grid
+          item
+          xs={5}
+          className={classes.root}
+          style={{
+            textAlign: 'center',
+            backgroundColor: 'white',
+            marginTop: '420px',
+            marginBottom: '420px'
+          }}
+        >
+          <marquee>
+            {' '}
+            <h2>WeThinkCode</h2>
+          </marquee>
+          <h3>sign up to your account</h3>
+          <TextField
+            id="outlined-basic"
+            label="Your email"
+            variant="outlined"
+          />
+          <br />
+          <TextField id="outlined-basic" label="Your name" variant="outlined" />
+          <br />
+          <TextField id="outlined-basic" label="Password" variant="outlined" />
+          <br />
+          By signing up you confirm that you've read and accepted our user
+          Notice and Privacy
+          <br />
+          <Button
+            onClick={() => {
+              firebase
+                .auth()
+                .createUserWithEmailAndPassword('malehu@gmail.com', '123456')
+                .then(userCredential => {
+                  // Signed in
+                  var user = userCredential.user;
+                  console.log(user);
+                  // ...
+                })
+                .catch(error => {
+                  var errorCode = error.code;
+                  var errorMessage = error.message;
+                  console.log(error.message);
+                  // ..
+                });
+            }}
+          >
+            Register
+          </Button>
+          <br />
+          OR
+          <br />
+          Alredy have an account?<Link to="/todolist"> sign in </Link>
+          <div>
+            {/*<Router>
+                <Link to="/todolist">
+                 
+                    
+                    Login
+                  
+                </Link>
+                <Switch>
+                  <Route exact path="/todolist" component={() =><ToDoList authorized ={true} />}/>
 
-
-
-<button onClick={()=>{  firebase.auth().signInWithEmailAndPassword("kamo@gmail.com", "123456")
-  .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-    console.log(user)
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(error.message)
-    // ..
-  });}}>Sign In</button>
-
-
-
+                  <ToDoList />
+                </Switch>
+              </Router>*/}
+          </div>
+        </Grid>
+      </Grid>
+    </div>
 </div>
   
 }
 
 
 
-function About() {
-  return <h2>What is this aboutAbout</h2>;
+function ToDoList() {
+  return <h2>
+    <div> 
+        
+        <Grid container spacing={1}>
+          <Grid item xs={2} style={{ backgroundColor: 'steel blue',textAlign:'center'}}>
+
+          <Search/>Search<br/>
+         <WbSunny/> My Day<br/>
+          <Star/>Important<br/>
+         <CalendarToday/> Planned <br/>
+         <Person/> Assigned to you<br/>
+          </Grid>
+          <Grid item xs={7}>
+      
+          <img src="https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/119590075_951069198708199_398863466099231430_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=pPEPyA6etCoAX8XUz51&_nc_ht=scontent.fjnb11-1.fna&oh=ce408739abb6ea32bd505fcbfe6d762f&oe=60FCD6D1"  width="100%"
+              margin="auto"/>
+              </Grid>
+          <Grid item xs={3 }style={{backgroundColor:'white',textAlign:'center'}}>
+            write about time booking<br/>
+            <WbSunny/>add to My Day<br/>
+           <AddAlert/> Remind Me<br/>
+           <EventAvailable/> Add due Date<br/>
+           <TextField id="outlined-basic" label="Add note" variant="outlined" />
+          </Grid>
+          </Grid>
+        </div>
+    </h2>;
 }
 
 function Users() {
