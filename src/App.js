@@ -164,8 +164,8 @@ export default function App() {
           <Route path="/todolist">
             <ToDoList />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/register">
+            <Register />
           </Route>
           <Route path="/">
             <Home />
@@ -177,6 +177,90 @@ export default function App() {
 }
 
 function Home() {
+  const classes = useStyles();
+  return <div> 
+  
+
+  <div style={{ backgroundColor: 'turquoise' }}>
+      
+      <Grid container spacing={0}>
+        <Grid item xs={1} />
+        <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
+          <img
+            src="https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/107070798_899383087210144_631496564149069433_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=PXulVd66UsgAX-kOTkv&_nc_ht=scontent.fjnb11-1.fna&oh=d7052661a5449b44b6f11f7ae604d90b&oe=60FA6FDB"
+            width="100%"
+          />
+        </Grid>
+        <Grid
+          item
+          xs={5}
+          className={classes.root}
+          style={{
+            textAlign: 'center',
+            backgroundColor: 'white',
+            marginTop: '420px',
+            marginBottom: '420px'
+          }}
+        >
+          <marquee>
+            {' '}
+            <h2>WeThinkCode</h2>
+          </marquee>
+          <h3>sign up to your account</h3>
+         
+          <TextField id="outlined-basic" label="Username" variant="outlined" />
+          <br />
+          <TextField id="outlined-basic" label="Password" variant="outlined" />
+          <br />
+         
+          <Button
+            onClick={() => {
+              firebase
+                .auth()
+                .createUserWithEmailAndPassword('malehu@gmail.com', '123456')
+                .then(userCredential => {
+                  // Signed in
+                  var user = userCredential.user;
+                  console.log(user);
+                  // ...
+                })
+                .catch(error => {
+                  var errorCode = error.code;
+                  var errorMessage = error.message;
+                  console.log(error.message);
+                  // ..
+                });
+            }}
+          >
+          <Link to="/todolist"  >  Login</Link>
+          </Button>
+          <br />
+          OR
+          <br />
+          Don't have account?<Link to="/register"> sign up </Link>
+          <div>
+            {/*<Router>
+                <Link to="/todolist">
+                 
+                    
+                    Login
+                  
+                </Link>
+                <Switch>
+                  <Route exact path="/todolist" component={() =><ToDoList authorized ={true} />}/>
+
+                  <ToDoList />
+                </Switch>
+              </Router>*/}
+          </div>
+        </Grid>
+      </Grid>
+    </div>
+</div>
+  
+}
+
+function Register() {
   const classes = useStyles();
   return <div> 
   
@@ -242,9 +326,9 @@ function Home() {
             Register
           </Button>
           <br />
-          OR
+          
           <br />
-          Alredy have an account?<Link to="/todolist"> sign in </Link>
+          You can sign in now<Link to="/home"> sign in </Link>
           <div>
             {/*<Router>
                 <Link to="/todolist">
@@ -266,8 +350,6 @@ function Home() {
 </div>
   
 }
-
-
 
 function ToDoList() {
   return <h2>
