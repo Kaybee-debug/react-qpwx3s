@@ -71,7 +71,7 @@ function App() {
       
       <Grid container spacing={0}>
         <Grid item xs={1} />
-        <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
+        <Grid item xs={5} >
           <img
             src="https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/107070798_899383087210144_631496564149069433_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=PXulVd66UsgAX-kOTkv&_nc_ht=scontent.fjnb11-1.fna&oh=d7052661a5449b44b6f11f7ae604d90b&oe=60FA6FDB"
             width="100%"
@@ -164,7 +164,7 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route exact path="/todolist" component= {() =>  <ToDoList authorized={false} />}>
+          <Route exact path="/todolist" component= {() =>  <ToDoList authorized={true} />}>
           
           </Route>
           <Route path="/register">
@@ -186,13 +186,13 @@ const[password,setPassword]=useState('')
   return <div> 
   
 
-  <div style={{ backgroundImage:'url("https://th.bing.com/th/id/R.0500688033296c9e6b05c8c6af91bade?rik=Pz3jE8ihbPKXzw&pid=ImgRaw'}}>
+  <div>
       
       <Grid container spacing={0}>
         <Grid item xs={1} />
         <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
           <img
-            src="https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/107070798_899383087210144_631496564149069433_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=PXulVd66UsgAX-kOTkv&_nc_ht=scontent.fjnb11-1.fna&oh=d7052661a5449b44b6f11f7ae604d90b&oe=60FA6FDB"
+            src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"
             width="100%"
           />
         </Grid>
@@ -283,14 +283,14 @@ const[password,setPassword]=useState('')
   return <div> 
   
 
-  <div style={{ backgroundImage:'url("https://th.bing.com/th/id/R.0500688033296c9e6b05c8c6af91bade?rik=Pz3jE8ihbPKXzw&pid=ImgRaw'}}>
+  <div >
       
       
       <Grid container spacing={0}>
         <Grid item xs={1} />
         <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
           <img
-            src="https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/107070798_899383087210144_631496564149069433_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=PXulVd66UsgAX-kOTkv&_nc_ht=scontent.fjnb11-1.fna&oh=d7052661a5449b44b6f11f7ae604d90b&oe=60FA6FDB"
+            src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"
             width="100%"
           />
         </Grid>
@@ -372,12 +372,12 @@ function ToDoList({authorized }) {
   if (! authorized){
     return <Redirect to ="/Home"/>
   }
-  return  <div style={{ backgroundImage:'url("https://th.bing.com/th/id/R.0500688033296c9e6b05c8c6af91bade?rik=Pz3jE8ihbPKXzw&pid=ImgRaw'}}>
+  return  <div >
       
         
         <Grid container spacing={1}>
           <Grid item xs={1}></Grid>
-          <Grid item xs={2} style={{backgroundColor:'cyan',textAlign:'center'}} >
+          <Grid item xs={2} style={{backgroundColor:'white',textAlign:'center' , marginTop: '420px', marginBottom: '420px' }} >
 
           <Search/>Search<br/>
          <WbSunny/> My Day<br/>
@@ -385,12 +385,12 @@ function ToDoList({authorized }) {
          <CalendarToday/> Planned <br/>
          <Person/> Assigned to you<br/>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
       
-          <img src="https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/119590075_951069198708199_398863466099231430_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=pPEPyA6etCoAX8XUz51&_nc_ht=scontent.fjnb11-1.fna&oh=ce408739abb6ea32bd505fcbfe6d762f&oe=60FCD6D1"  width="100%"
+          <img src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"  width="100%"
               />
               </Grid>
-          <Grid item xs={3 }style={{backgroundColor:'cyan',textAlign:'center'}}>
+          <Grid item xs={3 }style={{backgroundColor:'white',textAlign:'center' ,marginTop: '420px', marginBottom: '420px' }}>
             write about time booking<br/>
             <WbSunny/>add to My Day<br/>
            <AddAlert/> Remind Me<br/>
