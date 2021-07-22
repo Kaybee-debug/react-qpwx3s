@@ -8,6 +8,7 @@ import ToDoList from './Pages/ToDoList';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import {Redirect} from "react-router-dom";
 import Search from "@material-ui/icons/Search";
 import WbSunny from "@material-ui/icons/WbSunny";
 import Star from "@material-ui/icons/Star";
@@ -163,7 +164,7 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route exact path="/todolist" component= {() =>  <ToDoList authorized={true} />}>
+          <Route exact path="/todolist" component= {() =>  <ToDoList authorized={false} />}>
           
           </Route>
           <Route path="/register">
