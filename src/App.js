@@ -237,7 +237,7 @@ const[password,setPassword]=useState('')
                 });
             }}
           >
-          <Link to="/todolist"  >  Login</Link>
+          <Link to="/todolist"  >Login</Link>
           </Button>
           <button onClick={()=>{  firebase.auth().createUserWithEmailAndPassword("mail", "password")
   .then((userCredential) => {
@@ -396,6 +396,7 @@ function ToDoList({authorized }) {
            <AddAlert/> Remind Me<br/>
            <EventAvailable/> Add due Date<br/>
            <TextField id="outlined-basic" label="Add note" variant="outlined" />
+           <Button><Link to="/home" >logout</Link></Button>
           </Grid>
           </Grid>
         </div>
