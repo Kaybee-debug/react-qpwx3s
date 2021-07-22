@@ -16,7 +16,8 @@ import Person from "@material-ui/icons/Person";
 import Add from "@material-ui/icons/Add";
 import AddAlert from "@material-ui/icons/AddAlert";
 import EventAvailable from "@material-ui/icons/EventAvailable";
-
+import React, { useState } from "react";
+//import {useState} from 'react-router-dom';
 //components
 //import {Nav} from 'components';
 import {
@@ -40,6 +41,7 @@ const firebaseConfig = {
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
+
 
 //const fb=firebase.initializeApp
 //(firebaseConfig)
@@ -161,8 +163,8 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/todolist">
-            <ToDoList />
+          <Route exact path="/todolist" component= {() =>  <ToDoList authorized={true} />}>
+          
           </Route>
           <Route path="/register">
             <Register />
@@ -177,6 +179,8 @@ export default function App() {
 }
 
 function Home() {
+  const[mail,setMail]=useState('')
+const[password,setPassword]=useState('')
   const classes = useStyles();
   return <div> 
   
@@ -208,16 +212,16 @@ function Home() {
           </marquee>
           <h3>sign up to your account</h3>
          
-          <TextField id="outlined-basic" label="Username" variant="outlined" />
+          <TextField onChange={event => setMail(event.target.value)} id="outlined-basic" label="UserName" variant="outlined" />
           <br />
-          <TextField id="outlined-basic" label="Password" variant="outlined" />
+          <TextField onChange={event => setPassword(event.target.value)}  id="outlined-basic" label="Password" variant="outlined" />
           <br />
          
           <Button
             onClick={() => {
               firebase
                 .auth()
-                .createUserWithEmailAndPassword('malehu@gmail.com', '123456')
+                .createUserWithEmailAndPassword(mail,password)
                 .then(userCredential => {
                   // Signed in
                   var user = userCredential.user;
@@ -234,10 +238,21 @@ function Home() {
           >
           <Link to="/todolist"  >  Login</Link>
           </Button>
-          <br />
-          OR
-          <br />
-          Don't have account?<Link to="/register"> sign up </Link>
+          <button onClick={()=>{  firebase.auth().createUserWithEmailAndPassword("mail", "password")
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    console.log(user)
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(error.message)
+    // ..
+  });}}>  <Link to="/register"  >New User</Link></button>
+
+         
           <div>
             {/*<Router>
                 <Link to="/todolist">
@@ -261,6 +276,8 @@ function Home() {
 }
 
 function Register() {
+  const[mail,setMail]=useState('')
+const[password,setPassword]=useState('')
   const classes = useStyles();
   return <div> 
   
@@ -292,15 +309,13 @@ function Register() {
             <h2>WeThinkCode</h2>
           </marquee>
           <h3>sign up to your account</h3>
-          <TextField
+          <TextField onChange={event => setMail(event.target.value)} 
             id="outlined-basic"
             label="Your email"
             variant="outlined"
           />
-          <br />
-          <TextField id="outlined-basic" label="Your name" variant="outlined" />
-          <br />
-          <TextField id="outlined-basic" label="Password" variant="outlined" />
+         
+          <TextField  onChange={event => setPassword(event.target.value)} id="outlined-basic" label="Password" variant="outlined" />
           <br />
           By signing up you confirm that you've read and accepted our user
           Notice and Privacy
@@ -309,7 +324,7 @@ function Register() {
             onClick={() => {
               firebase
                 .auth()
-                .createUserWithEmailAndPassword('malehu@gmail.com', '123456')
+                .createUserWithEmailAndPassword(mail, password)
                 .then(userCredential => {
                   // Signed in
                   var user = userCredential.user;
@@ -352,13 +367,16 @@ function Register() {
   
 }
 
-function ToDoList() {
+function ToDoList({authorized }) {
+  if (! authorized){
+    return <Redirect to ="/Home"/>
+  }
   return  <div style={{ backgroundImage:'url("https://th.bing.com/th/id/R.0500688033296c9e6b05c8c6af91bade?rik=Pz3jE8ihbPKXzw&pid=ImgRaw'}}>
       
         
         <Grid container spacing={1}>
           <Grid item xs={1}></Grid>
-          <Grid item xs={2} style={{backgroundColor:'white',textAlign:'center'}} >
+          <Grid item xs={2} style={{backgroundColor:'cyan',textAlign:'center'}} >
 
           <Search/>Search<br/>
          <WbSunny/> My Day<br/>
@@ -371,7 +389,7 @@ function ToDoList() {
           <img src="https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/119590075_951069198708199_398863466099231430_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=pPEPyA6etCoAX8XUz51&_nc_ht=scontent.fjnb11-1.fna&oh=ce408739abb6ea32bd505fcbfe6d762f&oe=60FCD6D1"  width="100%"
               />
               </Grid>
-          <Grid item xs={3 }style={{backgroundColor:'white',textAlign:'center'}}>
+          <Grid item xs={3 }style={{backgroundColor:'cyan',textAlign:'center'}}>
             write about time booking<br/>
             <WbSunny/>add to My Day<br/>
            <AddAlert/> Remind Me<br/>
