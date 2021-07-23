@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import ToDoList from './Pages/ToDoList';
+import AddTodolist from './Pages/AddTodolist';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
@@ -18,6 +18,7 @@ import Add from "@material-ui/icons/Add";
 import AddAlert from "@material-ui/icons/AddAlert";
 import EventAvailable from "@material-ui/icons/EventAvailable";
 import React, { useState } from "react";
+
 //import {useState} from 'react-router-dom';
 //components
 //import {Nav} from 'components';
@@ -315,7 +316,7 @@ const[password,setPassword]=useState('')
             label="Your email"
             variant="outlined"
           />
-         
+         <br/>
           <TextField  onChange={event => setPassword(event.target.value)} id="outlined-basic" label="Password" variant="outlined" />
           <br />
           By signing up you confirm that you've read and accepted our user
@@ -386,8 +387,8 @@ function ToDoList({authorized }) {
          <Person/> Assigned to you<br/>
           </Grid>
           <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
-           
-           
+           what do you want to do toay?
+           <AddTodolist/>
           <img src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"  width="100%"
               />
               </Grid>
@@ -396,7 +397,7 @@ function ToDoList({authorized }) {
             <WbSunny/>add to My Day<br/>
            <AddAlert/> Remind Me<br/>
            <EventAvailable/> Add due Date<br/>
-           <TextField id="outlined-basic" label="Add note" variant="outlined" />
+           <TextField id="outlined-basic" label="Add note" variant="outlined" /><br/>
            <Button><Link to="/home" >logout</Link></Button>
           </Grid>
           </Grid>
@@ -406,83 +407,3 @@ function ToDoList({authorized }) {
 
 
 
-/*<Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */
-
-/*  <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-}
-
-function Home() {
-  return <div> 
-  <h2>Welcome Home</h2>
-
-<button onClick={()=>{  firebase.auth().createUserWithEmailAndPassword("kamo@gmail.com", "123456")
-  .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-    console.log(user)
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(error.message)
-    // ..
-  });}}>New User</button>
-
-
-
-<button onClick={()=>{  firebase.auth().signInWithEmailAndPassword("kamo@gmail.com", "123456")
-  .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-    console.log(user)
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(error.message)
-    // ..
-  });}}>Sign In</button>
-
-
-
-</div>
-  
-}
-
-
-
-function About() {
-  return <h2>What is this aboutAbout</h2>;
-}*/
