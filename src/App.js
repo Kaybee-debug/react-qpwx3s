@@ -43,6 +43,8 @@ const firebaseConfig = {
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
+const db = firebase.firestore();
+export {db};
 
 
 //const fb=firebase.initializeApp
