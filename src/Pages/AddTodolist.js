@@ -34,8 +34,8 @@ this.setState({
       value={this.state.userInput} 
       type="text"
       />
-      <Button onClick={() => this.addToList(this.state.userInput)}style={{color:"blue"}}>Add</Button>
-   <ul> {this.state.List.map((val)=><li>{val}</li>)}</ul>
+      <Button onClick={() => this.addToList(this.state.userInput)}style={{color:"white"}}>Add</Button>
+   <ul> {this.state.List.map((val)=><li style={{color:"white"}}>{val}</li>)}</ul>
     </div>
   );
   }

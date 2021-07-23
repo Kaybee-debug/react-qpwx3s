@@ -216,9 +216,9 @@ const[password,setPassword]=useState('')
           </marquee>
           <h3>sign up to your account</h3>
          
-          <TextField onChange={event => setMail(event.target.value)} id="outlined-basic" label="UserName" variant="outlined" />
+          <TextField onChange={event => setMail(event.target.value)} id="outlined-basic" label="Email" variant="outlined" />
           <br />
-          <TextField onChange={event => setPassword(event.target.value)}  id="outlined-basic" label="Password" variant="outlined" />
+          <TextField onChange={event => setPassword(event.target.value)}  id="outlined-basic" label="Password" type="password" variant="outlined" />
           <br />
          
           <Button
@@ -319,7 +319,7 @@ const[password,setPassword]=useState('')
             variant="outlined"
           />
          <br/>
-          <TextField  onChange={event => setPassword(event.target.value)} id="outlined-basic" label="Password" variant="outlined" />
+          <TextField  onChange={event => setPassword(event.target.value)} id="outlined-basic" label="Password" type="password"  variant="outlined" />
           <br />
           By signing up you confirm that you've read and accepted our user
           Notice and Privacy
@@ -389,7 +389,7 @@ function ToDoList({authorized }) {
          <Person/> Assigned to you<br/>
           </Grid>
           <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
-          <h4> what do you want to do toay?</h4>
+          <h4 style={{color:"white"}}> what do you want to do today?</h4>
            <AddTodolist/>
           <img src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"  width="100%"
               />
