@@ -26,6 +26,7 @@ this.setState({
       userInput:''
     })
   }
+  
   render(){
   return (
     <div>
