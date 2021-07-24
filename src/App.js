@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import AddTodolist from './Pages/AddTodolist';
+import TodoList from './Componets/TodoList';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
@@ -390,8 +390,8 @@ function ToDoList({authorized }) {
          <Person/> Assigned to you<br/>
           </Grid>
           <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
-          <h4 style={{color:"white"}}> what do you want to do today?</h4>
-           <AddTodolist/>
+         
+           <TodoList/>
           <img src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"  width="100%"
               />
               </Grid>
