@@ -3,13 +3,13 @@ import TodoForm from './TodoForm';
 import Delete from '@material-ui/icons/Delete';
 import Edit from '@material-ui/icons/Edit';
 
-function Todo({todos,completeTodo,removeTodo,updateTodo,submitUpdate,}){
-  const [edit,setEdit] = useState({
+function Todo({todos,completeTodo,removeTodo, updatedTodo}){
+  const  [edit,setEdit] = useState({
     id: null,
     value: ''
   });
-  const onSubmit = value =>{
-    updateTodo(edit.id,value)
+  const submitUpdate = value =>{
+    updatedTodo(edit.id, value)
     setEdit({
       id: null,
       value: ''

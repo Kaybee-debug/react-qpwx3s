@@ -19,6 +19,7 @@ import AddAlert from "@material-ui/icons/AddAlert";
 import EventAvailable from "@material-ui/icons/EventAvailable";
 import React, { useState } from "react";
 import Calendar from "react-material-ui-calendar";
+import {creteTheme} from '@material-ui/core/styles';
 
 
 //import {useState} from 'react-router-dom';
@@ -160,7 +161,7 @@ export default App;
 export default function App() {
   return (
     <Router>
-      <div>
+      <div  >
         <nav>
           
           
@@ -377,7 +378,7 @@ function ToDoList({authorized }) {
   if (! authorized){
     return <Redirect to ="/Home"/>
   }
-  return  <div >
+  return  <div  className ='todo-app'>
       
         
         <Grid container spacing={1}>
