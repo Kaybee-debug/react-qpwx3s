@@ -20,6 +20,9 @@ import AddAlert from "@material-ui/icons/AddAlert";
 import EventAvailable from "@material-ui/icons/EventAvailable";
 import React, { useState } from "react";
 import Calendar from "react-material-ui-calendar";
+// or @material-ui/lab/Adapter{Dayjs,Luxon,Moment} or any valid date-io adapter
+//import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
+//import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 import {creteTheme} from '@material-ui/core/styles';
 
 
@@ -165,6 +168,7 @@ export default function App() {
     <Router>
       <div  >
         <nav>
+
           
           
         </nav>
@@ -201,7 +205,7 @@ const[password,setPassword]=useState('')
         <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
           <img
             src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"
-            width="100%"
+            width="100%" 
           />
         </Grid>
         <Grid
