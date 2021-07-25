@@ -246,7 +246,7 @@ const[password,setPassword]=useState('')
                 });
             }}
           >
-          <Link to="/re"  >Sign up</Link>
+          <Link to="/register"  >Sign up</Link>
           </Button>
           <button onClick={()=>{  firebase.auth().createUserWithEmailAndPassword("mail", "password")
   .then((userCredential) => {
@@ -260,8 +260,8 @@ const[password,setPassword]=useState('')
     var errorMessage = error.message;
     console.log(error.message)
     // ..
-  });}}> Have an account? <Link to="/register"  >sign in</Link></button>
-
+  });}}> </button>
+Have an account? <Link to="/register"  >sign in</Link>
          
           <div>
             {/*<Router>
