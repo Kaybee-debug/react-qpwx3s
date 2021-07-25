@@ -46,8 +46,9 @@ const firebaseConfig = {
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
-const db = firebase.firestore();
-export {db};
+
+//const db = firebase.firestore();
+//export {db};
 
 
 //const fb=firebase.initializeApp
@@ -223,7 +224,9 @@ const[password,setPassword]=useState('')
           <br />
           <TextField onChange={event => setPassword(event.target.value)}  id="outlined-basic" label="Password" type="password" variant="outlined" />
           <br />
-         
+          By signing up you confirm that you've read and accepted our user
+          Notice and Privacy
+          <br />
           <Button
             onClick={() => {
               firebase
@@ -243,7 +246,7 @@ const[password,setPassword]=useState('')
                 });
             }}
           >
-          <Link to="/todolist"  >Login</Link>
+          <Link to="/re"  >Sign up</Link>
           </Button>
           <button onClick={()=>{  firebase.auth().createUserWithEmailAndPassword("mail", "password")
   .then((userCredential) => {
@@ -257,7 +260,7 @@ const[password,setPassword]=useState('')
     var errorMessage = error.message;
     console.log(error.message)
     // ..
-  });}}>  <Link to="/register"  >New User</Link></button>
+  });}}> Have an account? <Link to="/register"  >sign in</Link></button>
 
          
           <div>
@@ -315,7 +318,7 @@ const[password,setPassword]=useState('')
             {' '}
             <h2>WeThinkCode</h2>
           </marquee>
-          <h3>sign up to your account</h3>
+          <h3>Login</h3>
           <TextField onChange={event => setMail(event.target.value)} 
             id="outlined-basic"
             label="Your email"
@@ -324,9 +327,7 @@ const[password,setPassword]=useState('')
          <br/>
           <TextField  onChange={event => setPassword(event.target.value)} id="outlined-basic" label="Password" type="password"  variant="outlined" />
           <br />
-          By signing up you confirm that you've read and accepted our user
-          Notice and Privacy
-          <br />
+         
           <Button
             onClick={() => {
               firebase
@@ -346,12 +347,11 @@ const[password,setPassword]=useState('')
                 });
             }}
           >
-            Register
+           <Link to="/todolist"> Login</Link>
           </Button>
           <br />
           
-          <br />
-          You can sign in now<Link to="/home"> sign in </Link>
+          
           <div>
             {/*<Router>
                 <Link to="/todolist">
