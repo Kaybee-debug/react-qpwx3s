@@ -3,6 +3,7 @@ import './style.css';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import CheckBox from '@material-ui/icons/CheckBox';
 import { makeStyles } from '@material-ui/core/styles';
 import TodoList from './Componets/TodoList';
 import firebase from 'firebase/app';
@@ -68,7 +69,7 @@ function GridStyled() {
 }
 
 
-function App() {
+{/*function App() {
   const classes = useStyles();
   //let history = useHistory();
   console.log();
@@ -151,14 +152,14 @@ function App() {
 
                   <ToDoList />
                 </Switch>
-              </Router>*/}
+              </Router>
           </div>
         </Grid>
       </Grid>
     </div>
   );
 }
-export default App;
+export default App; */}
 export default function App() {
   return (
     <Router>
@@ -224,7 +225,7 @@ const[password,setPassword]=useState('')
           <br />
           <TextField onChange={event => setPassword(event.target.value)}  id="outlined-basic" label="Password" type="password" variant="outlined" />
           <br />
-          By signing up you confirm that you've read and accepted our user
+          <CheckBox />By signing up you confirm that you've read and accepted our user
           Notice and Privacy
           <br />
           <Button
@@ -260,7 +261,7 @@ const[password,setPassword]=useState('')
     var errorMessage = error.message;
     console.log(error.message)
     // ..
-  });}}> </button>
+  });}}> </button><br/>
 Have an account? <Link to="/register"  >sign in</Link>
          
           <div>
@@ -401,16 +402,9 @@ function ToDoList({authorized }) {
             write about time booking<br/>
             <WbSunny/>add to My Day<br/>
            <AddAlert/> Remind Me<br/>
-           <EventAvailable />    <Calendar
-        generalStyle={{
-          maxWidth: "3opx",
-          margin: "0 auto",
-          backgroundColor: "rgba(0,0,0,1)",
-          height: "100px",
-          overflow: "auto"
-        }}
-      />Add due Date<br/>
+           <EventAvailable />  Add due Date<br/>
            <TextField id="outlined-basic" label="Add note" variant="outlined" /><br/>
+       
         
            <Button><Link to="/home" >logout</Link></Button>
           </Grid>
