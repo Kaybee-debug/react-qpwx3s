@@ -18,6 +18,7 @@ import Add from "@material-ui/icons/Add";
 import AddAlert from "@material-ui/icons/AddAlert";
 import EventAvailable from "@material-ui/icons/EventAvailable";
 import React, { useState } from "react";
+import Calendar from "react-material-ui-calendar";
 
 
 //import {useState} from 'react-router-dom';
@@ -399,8 +400,17 @@ function ToDoList({authorized }) {
             write about time booking<br/>
             <WbSunny/>add to My Day<br/>
            <AddAlert/> Remind Me<br/>
-           <EventAvailable/> Add due Date<br/>
+           <EventAvailable />    <Calendar
+        generalStyle={{
+          maxWidth: "3opx",
+          margin: "0 auto",
+          backgroundColor: "rgba(0,0,0,1)",
+          height: "100px",
+          overflow: "auto"
+        }}
+      />Add due Date<br/>
            <TextField id="outlined-basic" label="Add note" variant="outlined" /><br/>
+        
            <Button><Link to="/home" >logout</Link></Button>
           </Grid>
           </Grid>
