@@ -51,12 +51,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-//const db = firebase.firestore();
-//export {db};
 
-
-//const fb=firebase.initializeApp
-//(firebaseConfig)
 const useStyles = makeStyles({
   root: {
     backgroundColor: 'gray',
@@ -72,109 +67,13 @@ function GridStyled() {
 }
 
 
-{/*function App() {
-  const classes = useStyles();
-  //let history = useHistory();
-  console.log();
-  return (
-    
-    <div style={{ backgroundColor: 'turquoise' }}>
-      
-      <Grid container spacing={0}>
-        <Grid item xs={1} />
-        <Grid item xs={5} >
-          <img
-            src="https://scontent.fjnb11-1.fna.fbcdn.net/v/t1.6435-9/107070798_899383087210144_631496564149069433_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=PXulVd66UsgAX-kOTkv&_nc_ht=scontent.fjnb11-1.fna&oh=d7052661a5449b44b6f11f7ae604d90b&oe=60FA6FDB"
-            width="100%"
-          />
-        </Grid>
-        <Grid
-          item
-          xs={5}
-          className={classes.root}
-          style={{
-            textAlign: 'center',
-            backgroundColor: 'white',
-            marginTop: '420px',
-            marginBottom: '420px'
-          }}
-        >
-          <marquee>
-            {' '}
-            <h2>WeThinkCode</h2>
-          </marquee>
-          <h3>sign up to your account</h3>
-          <TextField
-            id="outlined-basic"
-            label="Your email"
-            variant="outlined"
-          />
-          <br />
-          <TextField id="outlined-basic" label="Your name" variant="outlined" />
-          <br />
-          <TextField id="outlined-basic" label="Password" variant="outlined" />
-          <br />
-          By signing up you confirm that you've read and accepted our user
-          Notice and Privacy
-          <br />
-          <Button
-            onClick={() => {
-              firebase
-                .auth()
-                .createUserWithEmailAndPassword('malehu@gmail.com', '123456')
-                .then(userCredential => {
-                  // Signed in
-                  var user = userCredential.user;
-                  console.log(user);
-                  // ...
-                })
-                .catch(error => {
-                  var errorCode = error.code;
-                  var errorMessage = error.message;
-                  console.log(error.message);
-                  // ..
-                });
-            }}
-          >
-            Register
-          </Button>
-          <br />
-          OR
-          <br />
-          Alredy have an account?
-          <div>
-            {/*<Router>
-                <Link to="/todolist">
-                 
-                    
-                    Login
-                  
-                </Link>
-                <Switch>
-                  <Route exact path="/todolist" component={() =><ToDoList authorized ={true} />}/>
 
-                  <ToDoList />
-                </Switch>
-              </Router>
-          </div>
-        </Grid>
-      </Grid>
-    </div>
-  );
-}
-export default App; */}
+
 export default function App() {
   return (
     <Router>
       <div  >
-        <nav>
-
-          
-          
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        
         <Switch>
           <Route exact path="/todolist" component= {() =>  <ToDoList authorized={true} />}>
           
@@ -226,7 +125,7 @@ const[password,setPassword]=useState('')
           <br />
           <TextField onChange={event => setPassword(event.target.value)}  id="outlined-basic" label="Password" type="password" variant="outlined" />
           <br />
-          <CheckBox />By signing up you confirm that you've read and accepted our user
+          By signing up you confirm that you've read and accepted our user
           Notice and Privacy
           <br />
           <Button
@@ -248,7 +147,7 @@ const[password,setPassword]=useState('')
                 });
             }}
           >
-          <Link to="/register" style={{ textDecoration:'none', color:'blue'}}  >Sign up</Link>
+          <Link to="/register" style={{ textDecoration:'none'}}  > <button style={{backgroundColor:"blue"}}>Sign up</button></Link>
           </Button>
           <button onClick={()=>{  firebase.auth().createUserWithEmailAndPassword("mail", "password")
   .then((userCredential) => {
@@ -265,21 +164,7 @@ const[password,setPassword]=useState('')
   });}}> </button><br/>
 Have an account? <Link to="/register" style={{color:'blue'}} >sign in</Link>
          
-          <div>
-            {/*<Router>
-                <Link to="/todolist">
-                 
-                    
-                    Login
-                  
-                </Link>
-                <Switch>
-                  <Route exact path="/todolist" component={() =><ToDoList authorized ={true} />}/>
-
-                  <ToDoList />
-                </Switch>
-              </Router>*/}
-          </div>
+         
         </Grid>
       </Grid>
     </div>
@@ -346,26 +231,12 @@ const[password,setPassword]=useState('')
                 });
             }}
           >
-           <Link to="/todolist"  style={{textDecoration:'none' ,color:'blue'}}> Sign in</Link>
+           <Link to="/todolist"  style={{textDecoration:'none'}}> <button style={{backgroundColor:"blue"}}>Sign in</button></Link>
           </Button>
           <br />
           
           
-          <div>
-            {/*<Router>
-                <Link to="/todolist">
-                 
-                    
-                    Login
-                  
-                </Link>
-                <Switch>
-                  <Route exact path="/todolist" component={() =><ToDoList authorized ={true} />}/>
-
-                  <ToDoList />
-                </Switch>
-              </Router>*/}
-          </div>
+        
         </Grid>
       </Grid>
     </div>
@@ -377,6 +248,9 @@ function ToDoList({authorized }) {
   if (! authorized){
     return <Redirect to ="/Home"/>
   }
+  
+
+ 
   return  <div  >
       
         
@@ -384,11 +258,21 @@ function ToDoList({authorized }) {
           
           <Grid item xs={2} style={{backgroundColor:'white',textAlign:'center' , marginLeft:'120px', height:'500px' ,marginTop: '420px', marginBottom: '420px'}} >
 
-          <Search/>Search<br/>
-         <WbSunny/> My Day<br/>
-          <Star/>Important<br/>
-         <CalendarToday/> Planned <br/>
-         <Person/> Assigned to you<br/>
+       <Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}> <Search/>Search </Link>
+       <br/><br/>
+       <br/><br/>
+         <Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}> <WbSunny/> My Day </Link>
+         <br/><br/>
+         <br/><br/>
+          
+          <Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}> <Star/>Important </Link>
+          <br/><br/>
+          <br/><br/>
+         <Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}> <CalendarToday/> Planned </Link>
+         <br/><br/>
+         <br/><br/>
+
+         <Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}> <Person/> Assigned to you </Link><br/>
     
           </Grid>
           <Grid item xs={5} style={{ height:'500px' ,marginTop: '420px', marginBottom: '420px'}} >
@@ -405,18 +289,28 @@ function ToDoList({authorized }) {
               </Grid>
           <Grid item xs={3 }style={{backgroundColor:'white',textAlign:'center' ,height:'500px',marginTop: '420px', marginBottom: '420px' }}>
             <br/>
-            <WbSunny/>add to My Day<br/>
-           <AddAlert/> Remind Me<br/>
-           <EventAvailable />  Add due Date<br/>
-           <TextField id="outlined-basic" label="Add note" variant="outlined" /><br/>
+            <Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}><WbSunny/>add to My Day </Link>
+            <br/><br/>
+           <br/><br/>
+            <Link style={{marginTop:"100px" ,textDecoration:"none" ,color:"black"}}><AddAlert/> Remind Me </Link>
+            <br/><br/>
+           <br/><br/>
+           <Link style={{marginTop:"100px" ,textDecoration:"none" ,color:"black"}}><EventAvailable />  Add due Date </Link>
+           <br/><br/>
+           <br/><br/>
+           <TextField id="outlined-basic" label="Add note" variant="outlined" />
+           <br/><br/>
+           <br/><br/>
+
           
         
-           <Button ><Link to="/home" style={{color:'blue', textDecoration:'none' }}  >logout</Link></Button>
+           <Link to="/home" style={{ textDecoration:'none' }}  > <button style={{backgroundColor:"blue"}} >logout </button></Link>
           </Grid>
           </Grid>
         </div>
     ;
 }
+
 
 
 
