@@ -380,7 +380,7 @@ function ToDoList({authorized }) {
   return  <div  >
       
         
-        <Grid item xs ={12} container spacing={0}style={{backgroundColor:'red'}} >
+        <Grid item xs ={12} container spacing={0} >
           
           <Grid item xs={2} style={{backgroundColor:'white',textAlign:'center' , marginLeft:'120px', height:'500px' ,marginTop: '420px', marginBottom: '420px'}} >
 
@@ -389,19 +389,19 @@ function ToDoList({authorized }) {
           <Star/>Important<br/>
          <CalendarToday/> Planned <br/>
          <Person/> Assigned to you<br/>
+    
           </Grid>
-          <Grid item xs={5} style={{backgroundColor:'black', height:'500px' ,marginTop: '420px', marginBottom: '420px'}} >
+          <Grid item xs={5} style={{ height:'500px' ,marginTop: '420px', marginBottom: '420px'}} >
 
-           
+           <div className="todo-app" style={{  marginBottom: '0px',marginTop: '0px'}} >
          
             <TodoList  />
           
-           
-           
-            
+           </div>
+          
           <img src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"  width="100%"
               />
-              
+            
               </Grid>
           <Grid item xs={3 }style={{backgroundColor:'white',textAlign:'center' ,height:'500px',marginTop: '420px', marginBottom: '420px' }}>
             <br/>
