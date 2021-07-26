@@ -219,10 +219,7 @@ const[password,setPassword]=useState('')
             marginBottom: '420px'
           }}
         >
-          <marquee>
-            {' '}
-            <h2>WeThinkCode</h2>
-          </marquee>
+         
           <h3>sign up to your account</h3>
          
           <TextField onChange={event => setMail(event.target.value)} id="outlined-basic" label="Email" variant="outlined" />
@@ -319,10 +316,7 @@ const[password,setPassword]=useState('')
             marginBottom: '420px'
           }}
         >
-          <marquee>
-            {' '}
-            <h2>WeThinkCode</h2>
-          </marquee>
+          
           <h3>Login</h3>
           <TextField onChange={event => setMail(event.target.value)} 
             id="outlined-basic"
@@ -408,7 +402,7 @@ function ToDoList({authorized }) {
            <AddAlert/> Remind Me<br/>
            <EventAvailable />  Add due Date<br/>
            <TextField id="outlined-basic" label="Add note" variant="outlined" /><br/>
-       
+          
         
            <Button><Link to="/home" >logout</Link></Button>
           </Grid>
