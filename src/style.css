@@ -15,7 +15,7 @@ body{
   font-family: 'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans', Arial, sans-serif;
 }*/
 
-/*.todo-app{
+.todo-app{
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -27,9 +27,9 @@ body{
   border-radius: 10px;
   padding-bottom: 32px;
 
-}*/
+}
 h1{
-  margin: 32px 0;
+  margin: 22px 0;
   color: #fff;
   font-size: 50px;
 }

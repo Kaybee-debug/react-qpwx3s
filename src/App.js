@@ -377,12 +377,12 @@ function ToDoList({authorized }) {
   if (! authorized){
     return <Redirect to ="/Home"/>
   }
-  return  <div  className ='todo-app'>
+  return  <div  >
       
         
-        <Grid container spacing={1}>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={2} style={{backgroundColor:'white',textAlign:'center' , marginTop: '420px', marginBottom: '420px' }} >
+        <Grid item xs ={12} container spacing={0}style={{backgroundColor:'red'}} >
+          
+          <Grid item xs={2} style={{backgroundColor:'white',textAlign:'center' , marginLeft:'120px', height:'500px' ,marginTop: '420px', marginBottom: '420px'}} >
 
           <Search/>Search<br/>
          <WbSunny/> My Day<br/>
@@ -390,13 +390,20 @@ function ToDoList({authorized }) {
          <CalendarToday/> Planned <br/>
          <Person/> Assigned to you<br/>
           </Grid>
-          <Grid item xs={5} style={{ marginTop: '420px', marginBottom: '420px' }}>
+          <Grid item xs={5} style={{backgroundColor:'black', height:'500px' ,marginTop: '420px', marginBottom: '420px'}} >
+
+           
          
-           <TodoList/>
+            <TodoList  />
+          
+           
+           
+            
           <img src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"  width="100%"
               />
+              
               </Grid>
-          <Grid item xs={3 }style={{backgroundColor:'white',textAlign:'center' ,marginTop: '420px', marginBottom: '420px' }}>
+          <Grid item xs={3 }style={{backgroundColor:'white',textAlign:'center' ,height:'500px',marginTop: '420px', marginBottom: '420px' }}>
             <br/>
             <WbSunny/>add to My Day<br/>
            <AddAlert/> Remind Me<br/>
@@ -410,6 +417,7 @@ function ToDoList({authorized }) {
         </div>
     ;
 }
+
 
 
 
