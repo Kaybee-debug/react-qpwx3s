@@ -248,7 +248,7 @@ const[password,setPassword]=useState('')
                 });
             }}
           >
-          <Link to="/register"  >Sign up</Link>
+          <Link to="/register" style={{ textDecoration:'none', color:'blue'}}  >Sign up</Link>
           </Button>
           <button onClick={()=>{  firebase.auth().createUserWithEmailAndPassword("mail", "password")
   .then((userCredential) => {
@@ -263,7 +263,7 @@ const[password,setPassword]=useState('')
     console.log(error.message)
     // ..
   });}}> </button><br/>
-Have an account? <Link to="/register"  >sign in</Link>
+Have an account? <Link to="/register" style={{color:'blue'}} >sign in</Link>
          
           <div>
             {/*<Router>
@@ -317,7 +317,7 @@ const[password,setPassword]=useState('')
           }}
         >
           
-          <h3>Login</h3>
+          <h3>Sign in to your account</h3>
           <TextField onChange={event => setMail(event.target.value)} 
             id="outlined-basic"
             label="Your email"
@@ -346,7 +346,7 @@ const[password,setPassword]=useState('')
                 });
             }}
           >
-           <Link to="/todolist"> Sign in</Link>
+           <Link to="/todolist"  style={{textDecoration:'none' ,color:'blue'}}> Sign in</Link>
           </Button>
           <br />
           
@@ -397,14 +397,14 @@ function ToDoList({authorized }) {
               />
               </Grid>
           <Grid item xs={3 }style={{backgroundColor:'white',textAlign:'center' ,marginTop: '420px', marginBottom: '420px' }}>
-            write about time booking<br/>
+            <br/>
             <WbSunny/>add to My Day<br/>
            <AddAlert/> Remind Me<br/>
            <EventAvailable />  Add due Date<br/>
            <TextField id="outlined-basic" label="Add note" variant="outlined" /><br/>
           
         
-           <Button><Link to="/home" >logout</Link></Button>
+           <Button ><Link to="/home" style={{color:'blue', textDecoration:'none' }}  >logout</Link></Button>
           </Grid>
           </Grid>
         </div>
