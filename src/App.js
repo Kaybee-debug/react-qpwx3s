@@ -19,16 +19,10 @@ import Add from "@material-ui/icons/Add";
 import AddAlert from "@material-ui/icons/AddAlert";
 import EventAvailable from "@material-ui/icons/EventAvailable";
 import React, { useState } from "react";
-import Calendar from "react-material-ui-calendar";
-// or @material-ui/lab/Adapter{Dayjs,Luxon,Moment} or any valid date-io adapter
-//import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
-//import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 import {creteTheme} from '@material-ui/core/styles';
 
 
-//import {useState} from 'react-router-dom';
-//components
-//import {Nav} from 'components';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -54,7 +48,7 @@ if (!firebase.apps.length) {
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: 'gray',
+    
     color: 'black'
   }
 });
@@ -275,7 +269,7 @@ function ToDoList({authorized }) {
          <Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}> <Person/> Assigned to you </Link><br/>
     
           </Grid>
-          <Grid item xs={5} style={{ height:'500px' ,marginTop: '420px', marginBottom: '420px'}} >
+          <Grid item xs={5} style={{ height:'500px' ,marginTop: '420px', marginBottom: '420px' ,overflow:'scroll'}} >
 
            <div className="todo-app" style={{  marginBottom: '0px',marginTop: '0px'}} >
          
