@@ -252,7 +252,7 @@ function ToDoList({authorized }) {
           
           <Grid item xs={2} style={{backgroundColor:'white',textAlign:'center' , marginLeft:'120px', height:'500px' ,marginTop: '420px', marginBottom: '420px'}} >
 
-       <Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}> <Search/>Search </Link>
+          <TextField id="outlined-basic" label="Search" variant="outlined"><Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}> <Search/>Search </Link></TextField>
        <br/><br/>
        <br/><br/>
          <Link style={{marginTop:"100px" ,textDecoration:"none",color:"black"}}> <WbSunny/> My Day </Link>
