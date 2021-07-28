@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 const Login = (props) => {
   const {
     email,
@@ -35,23 +36,24 @@ const Login = (props) => {
           }}
         >
          
-          <h3>sign up to your account</h3>
-    <label>UserName</label>
-    <input type="text" autoFocus required value={email} onChange={e => setEmail(e.target.value)}/>
+          <h3>Sign up to your account</h3>
+   
+    <TextField type="text" autoFocus required value={email} onChange={e => setEmail(e.target.value)} id="outlined-basic" label="Your email" variant="outlined" />
     <p>{emailError}</p>
-    <label>Password</label>
-    <input type="password" required value={password} onChange={e => setPassword(e.target.value)} />
+    
+    <TextField type="password" required value={password} onChange={e => setPassword(e.target.value)} id="outlined-basic" label="Create Password" variant="outlined"/>
     <p>{passwordError}</p>
     <div>
       {hasAcoount ? (
         <>
-        <button onClick={ handleLogin}>sign in</button>
-        <p>Dont have account ?<span onClick={()=> setHasAccount(!hasAcoount)}>sign up</span> </p>
+        <button onClick={ handleLogin} style={{color:'blue'}}>sign in</button>
+        <p>Dont have account ?<span onClick={()=> setHasAccount(!hasAcoount)} style={{color:'blue'}}>sign up</span> </p>
         </>
       ) : (
         <>
-        <button onClick={handleSingup}>sign up</button>
-        <p>have an account ?<span onClick={() => setHasAccount(!hasAcoount)}> sign in</span></p>
+        
+        <button onClick={handleSingup} style={{color:'blue'}}>sign up</button>
+        <p>have an account ?<span onClick={() => setHasAccount(!hasAcoount)} style={{color:'blue'}}> sign in</span></p>
         </>
       )}
     </div>
