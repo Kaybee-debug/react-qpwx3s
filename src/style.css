@@ -17,9 +17,8 @@ body{
 
 .todo-app{
   
-  background: #3d7bdf;
+ 
   text-align: center;
-  margin: 128px auto;
   border-radius: 0px;
   padding-bottom: 32px;
   
@@ -100,5 +99,8 @@ h1{
   color: #fff;
 }
 
+.picgrid{
 
+  background-image:url("https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg")
+}
 
