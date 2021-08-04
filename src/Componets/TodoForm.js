@@ -3,10 +3,19 @@ import firebase from "firebase/app";
 import "firebase/firestore"
 
 function TodoForm(props){
-  const [Datalist,setData]=useState([{activity:'attend the meeting'}])
+  const [Datalist,setData]=useState([{activity:''}])
 
   const[input, setInput]= useState(props.edit ? props.edit.value: '');
+  //const [newActivity,setNewActivity]=useState();
+
+  const [newDailyActivity, setNewDailyActivity] =useState()
   
+  const onCreate = () =>{
+    const db =firebase.firestore()
+    db.collection("users").add({activity: newDailyActivity})
+  }
+  
+
   const inputRef= useRef(null)
 
   useEffect(() => {
@@ -41,30 +50,31 @@ className='todo-input edit'
 onChange={handleChange}
 ref={inputRef}
 />
-<button className='todo-button edit'>update </button> 
+<button className='todo-button edit'
+>update </button> 
 </>
 ) :  (
 <>
 <input
  type="text"
 placeholder='Add to do'
-value={input}
+value={newDailyActivity}
 name='text'
 className='todo-input'
-onChange={handleChange}
+onChange={(e)=>setNewDailyActivity(e.target.value)}
 ref={inputRef}
 />
 <button className='todo-button'
-onClick={()=>{ 
-  console.log("writing")
-  firebase.firestore().collection('users').add({activity:'skatting'}).then(response=>{
-  console.log(response)
-})
-}}
+onClick={onCreate}
 >Add todo</button>
+
+
 </>
+
 )}
 <br></br>
+
+{/*<button onClick={onCreate}>create</button>*/}
 <br></br>
 <br></br>
 
@@ -91,7 +101,7 @@ setData(val)
    console.log("list = ",Datalist)
 
 })
-}}>Read</button>
+}}>View</button>
   <div className = "App" >
   <ul>
   {Datalist.map(person => {
