@@ -116,16 +116,20 @@ setData(val)
 }}>View</button>
   <div className = "App" >
   <ul>
+    
   {Datalist.map(person => {
     return (
       <div key={person.id} onClick={(data)=>{
         console.log("click",person)
 
-      }}>
+      }}
+      className="todoItems"
+      >
         {person.activity} 
       </div>
     )
   })}
+  
 </ul>
      </div>
 

@@ -104,4 +104,14 @@ h1{
 
   background-image:url("https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg")
 }
+.todoItems {
+  width: 90%;
+  text-align: left;
+  min-height: 17px;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 4px auto;
+  color: #ffffff;
+  background: linear-gradient(rgb(36, 10, 109) 0%, rgb(36, 13, 102) 100%);
+}
 
