@@ -12,7 +12,7 @@ function TodoForm(props){
   
   const onCreate = () =>{
     const db =firebase.firestore()
-    db.collection("users").add({activity: newDailyActivity})
+    db.collection("users").add({activity:input})
   }
   
 
@@ -52,21 +52,33 @@ ref={inputRef}
 />
 <button className='todo-button edit'
 >update </button> 
+
 </>
 ) :  (
 <>
 <input
  type="text"
 placeholder='Add to do'
+value={input}
+name='text'
+className='todo-input edit'
+onChange={handleChange}
+ref={inputRef}
+/>
+{/*<button className='todo-button edit'
+>add todo </button> 
+{/*<input
+ type="text"
+placeholder='Add to do'
 value={newDailyActivity}
 name='text'
 className='todo-input'
 onChange={(e)=>setNewDailyActivity(e.target.value)}
-ref={inputRef}
-/>
+//ref={inputRef}
+/>*/}
 <button className='todo-button'
 onClick={onCreate}
->Add todo</button>
+>save</button>
 
 
 </>
@@ -106,12 +118,12 @@ setData(val)
   <ul>
   {Datalist.map(person => {
     return (
-      <li key={person.id} onClick={(data)=>{
+      <div key={person.id} onClick={(data)=>{
         console.log("click",person)
 
       }}>
         {person.activity} 
-      </li>
+      </div>
     )
   })}
 </ul>
