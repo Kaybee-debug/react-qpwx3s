@@ -69,10 +69,10 @@ const Hero = ({ handleLogout }) => {
           >
             <TodoList />
 
-            <img
+           {/*} <img
               src="https://4.bp.blogspot.com/-NusT8_BxXvU/WigtjvJvKLI/AAAAAAABOyg/VP7N3f2xgkAOOU2LPKaVCBdTsMiDJp_EgCK4BGAYYCw/s1600/Web-design.jpg"
               width="100%"
-            />
+        />*/}
           </div>
         </Grid>
         <Grid
